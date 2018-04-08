@@ -8,6 +8,6 @@ public class Main {
 		Input in = new Input(filename);
 		Core core = new Core(in.readToString());
 		Output out = new Output();
-		out.out(core.getresults(core.CountWord()));
+		out.out(core.getresults1(core.CountWord()));
 	}
 }

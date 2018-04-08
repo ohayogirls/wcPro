@@ -12,7 +12,7 @@ public class Core {
 	public List<Map.Entry<String, Integer>> CountWord(){
 		//识别单词，统计词频
 		HashMap<String,Integer> map = new HashMap<String,Integer>();
-		String reg = "[a-zA-Z]+";
+		String reg = "([a-zA-Z]+(-[a-zA-Z]+)*)";
         Pattern p = Pattern.compile(reg);
         Matcher m = p.matcher(content);
         while(m.find()){
@@ -39,7 +39,16 @@ public class Core {
         });
         return list;
 	}
+	//for test
 	public String getresults(List<Map.Entry<String, Integer>> list){
+		String str = "";
+		for (Map.Entry<String, Integer> mapping : list) {  
+			str+=(mapping.getKey() + ":" + mapping.getValue()+";");  
+        }
+		return str;
+	}	
+	//for Main
+	public String getresults1(List<Map.Entry<String, Integer>> list){
 		String str = "";
 		int flag=1;
 		for (Map.Entry<String, Integer> mapping : list) {  
